@@ -4,3 +4,12 @@
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/bundle/dash.vim"]
+	path = vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-ruby-xmpfilter"]
+	path = vim/bundle/vim-ruby-xmpfilter
+	url = https://github.com/t9md/vim-ruby-xmpfilter

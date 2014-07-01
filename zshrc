@@ -1,6 +1,6 @@
 PROMPT='%{$fg[yellow]%}%n%{$fg[blue]%}%{$reset_color%} %{$fg[blue]%}%{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)$(vi_prompt)%{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
 
-RPROMPT=''
+RPROMPT='%{$fg[red]%}$(rvm-prompt)%{$reset_color%}'
 
 export DIRSTACKFILE=~/.zdirs
 export DIRSTACKSIZE=8
@@ -155,9 +155,11 @@ function mandelbrot {
     done
 }
 
-# bin folder
-export PATH=$HOME/bin:$PATH
-
+# Vim!
 export EDITOR=vim
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# bin folder
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
