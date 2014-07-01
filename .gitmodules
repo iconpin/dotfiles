@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "misc/osx-terminal.app-colors-solarized"]
+	path = misc/osx-terminal.app-colors-solarized
+	url = https://github.com/tomislav/osx-terminal.app-colors-solarized
