@@ -1,21 +1,21 @@
 [user]
-	name = Ignacio Contreras Pinilla
-	email = ignacio.con.pin@gmail.com
+  name = Ignacio Contreras Pinilla
+  email = ignacio.con.pin@gmail.com
 [color]
   ui = auto
 [push]
-	default = current
+  default = current
 [branch "master"]
-	rebase = true
+  rebase = true
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
 [alias]
-	c = checkout
-	s = status
-	b = branch
+  c = checkout
+  s = status
+  b = branch
   h = help
-	# Similar to [log --pretty=oneline --graph --all] with but a shorter hash
+  # Similar to [log --pretty=oneline --graph --all] with but a shorter hash
   # and it displays short date
   l = log --pretty=format:'%C(yellow)%h %Cred%ad %Creset%s' \
     --date=short --graph --all
