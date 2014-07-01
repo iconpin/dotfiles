@@ -22,3 +22,6 @@
 [submodule "misc/osx-terminal.app-colors-solarized"]
 	path = misc/osx-terminal.app-colors-solarized
 	url = https://github.com/tomislav/osx-terminal.app-colors-solarized
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise
