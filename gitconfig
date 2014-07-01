@@ -18,5 +18,7 @@
 	# Similar to [log --pretty=oneline --graph --all] with but a shorter hash
   # and it displays short date
   l = log --pretty=format:'%C(yellow)%h %Cred%ad %Creset%s' \
-      --date=short --graph --all
+    --date=short --graph --all
+  ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cgreen%d %Creset%s' \
+    --date=short --graph --all
   lp = log --pretty=format:'%C(yellow)%h %Cred%ad %C(yellow)%an%Cgreen%d %Creset%s' --date=short --graph --all
