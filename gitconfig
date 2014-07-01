@@ -1,0 +1,22 @@
+[user]
+	name = Ignacio Contreras Pinilla
+	email = ignacio.con.pin@gmail.com
+[color]
+  ui = auto
+[push]
+	default = current
+[branch "master"]
+	rebase = true
+[core]
+	excludesfile = ~/.gitignore
+  editor = vim
+[alias]
+	c = checkout
+	s = status
+	b = branch
+  h = help
+	# Similar to [log --pretty=oneline --graph --all] with but a shorter hash
+  # and it displays short date
+  l = log --pretty=format:'%C(yellow)%h %Cred%ad %Creset%s' \
+      --date=short --graph --all
+  lp = log --pretty=format:'%C(yellow)%h %Cred%ad %C(yellow)%an%Cgreen%d %Creset%s' --date=short --graph --all
