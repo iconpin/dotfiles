@@ -1,4 +1,5 @@
-PROMPT='%{$fg[yellow]%}%n%{$fg[blue]%}%{$reset_color%} %{$fg[blue]%}%{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)$(vi_prompt)%{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
+PROMPT='%{$fg[yellow]%}%n%{$fg[blue]%}%{$reset_color%} %{$fg[blue]%}%{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)$(vi_prompt)
+%{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
 
 RPROMPT='%{$fg[red]%}$(rvm-prompt)%{$reset_color%}'
 
