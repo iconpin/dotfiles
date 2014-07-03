@@ -15,6 +15,7 @@
   s = status
   b = branch
   h = help
+  d = diff
   # Similar to [log --pretty=oneline --graph --all] with but a shorter hash
   # and it displays short date
   l = log --pretty=format:'%C(yellow)%h %Cred%ad %Creset%s' \
