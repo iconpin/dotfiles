@@ -32,4 +32,9 @@ autocmd FileType ruby nmap <buffer> <C-r> <Plug>(xmpfilter-run)
 nnoremap <C-h> :bp<cr>
 nnoremap <C-l> :bn<cr>
 
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+
 nnoremap <C-f> ==
+
+set tags+=./tags
