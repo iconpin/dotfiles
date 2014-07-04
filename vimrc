@@ -37,4 +37,7 @@ nnoremap <C-k> 10k
 
 nnoremap <C-f> ==
 
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
+
 set tags+=./tags
