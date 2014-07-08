@@ -1,7 +1,11 @@
-PROMPT='%{$fg[yellow]%}%n%{$fg[blue]%}%{$reset_color%} %{$fg[blue]%}%{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)$(vi_prompt)
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)$(vi_prompt)
 %{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
 
 RPROMPT='%{$fg[red]%}$(rvm-prompt)%{$reset_color%}'
+
+function custom_pwd {
+    echo $(pwd | sed -e "s,^$HOME,~," | sed -e "s,~/Development/,~/D/,")
+}
 
 export DIRSTACKFILE=~/.zdirs
 export DIRSTACKSIZE=8
@@ -71,7 +75,6 @@ alias sl="ls"
 alias l="ls -h"
 alias ll="ls -lh"
 alias la="ls -lah"
-
 
 ## SNIPPETS ##
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -161,6 +164,9 @@ export EDITOR=vim
 
 # bin folder
 export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+
+# export TERM=xterm-color
+
+export LANG=en_US.UTF-8
