@@ -22,4 +22,6 @@
     --date=short --graph --all
   ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cgreen%d %Creset%s' \
     --date=short --graph --all
+  lo = log --pretty=format:'%C(yellow)%h %Cred%ad %Cgreen%d %Creset%s' \
+    --date=short --graph
   lp = log --pretty=format:'%C(yellow)%h %Cred%ad %C(yellow)%an%Cgreen%d %Creset%s' --date=short --graph --all
