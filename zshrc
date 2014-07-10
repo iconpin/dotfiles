@@ -165,8 +165,11 @@ export EDITOR=vim
 # bin folder
 export PATH=$HOME/bin:$PATH
 
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting
+export PATH="$HOME/.rvm/bin:$PATH"
 
-# export TERM=xterm-color
+# May need this for colors over ssh!
+# export TERM=xterm-color 
 
+# Better have something setted -- ssh
 export LANG=en_US.UTF-8
