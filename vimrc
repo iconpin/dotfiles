@@ -41,3 +41,7 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 set tags+=./tags
+
+set completefunc=emoji#complete
+
+nmap semoji :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<cr>
