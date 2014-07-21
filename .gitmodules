@@ -46,3 +46,9 @@
 [submodule "vim/bundle/vim-emoji"]
 	path = vim/bundle/vim-emoji
 	url = https://github.com/junegunn/vim-emoji
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "misc/alfred2-workflows/Spotify-for-Alfred"]
+	path = misc/alfred2-workflows/Spotify-for-Alfred
+	url = https://github.com/citelao/Spotify-for-Alfred
