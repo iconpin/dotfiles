@@ -52,3 +52,6 @@
 [submodule "misc/alfred2-workflows/Spotify-for-Alfred"]
 	path = misc/alfred2-workflows/Spotify-for-Alfred
 	url = https://github.com/citelao/Spotify-for-Alfred
+[submodule "emacs.d"]
+	path = emacs.d
+	url = git@github.com:iconpin/dotemacs
