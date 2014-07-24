@@ -1,7 +1,7 @@
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)%{$fg[red]%}[$(rvm-prompt)]%{$reset_color%}
 %{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
 
-RPROMPT='%{$fg[red]%}$(rvm-prompt)%{$reset_color%}'
+RPROMPT=''
 
 function custom_pwd {
     echo $(pwd | sed -e "s,^$HOME,~," | sed -e "s,~/Development/,~/D/,")
@@ -155,7 +155,7 @@ export PATH=$HOME/bin:$PATH
 export PATH="$HOME/.rvm/bin:$PATH"
 
 # May need this for colors over ssh!
-# export TERM=xterm-color 
+# export TERM=xterm-color
 
 # Better have something setted -- ssh
 export LANG=en_US.UTF-8
