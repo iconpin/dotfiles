@@ -1,4 +1,4 @@
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)$(vi_prompt)
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)
 %{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
 
 RPROMPT='%{$fg[red]%}$(rvm-prompt)%{$reset_color%}'
@@ -37,7 +37,6 @@ setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_MINUS
 setopt PUSHD_SILENT
 setopt PUSHD_TOHOME
-setopt VI
 
 ## ZSTYLE ##
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -117,19 +116,6 @@ check-line() {
 }
 zle -N check-line
 
-# VI
-zle-keymap-select() {
-    zle reset-prompt
-}
-zle -N zle-keymap-select
-
-vi_prompt() {
-    INDICATOR="%{$reset_color%}$fg[cyan]:vi%{$reset_color%} "
-    if [ "$KEYMAP" = "vicmd" ]; then
-        echo $INDICATOR
-    fi
-}
-
 # GIT
 git_prompt() {
     if git rev-parse --git-dir >/dev/null 2>&1; then
@@ -173,3 +159,9 @@ export PATH="$HOME/.rvm/bin:$PATH"
 
 # Better have something setted -- ssh
 export LANG=en_US.UTF-8
+
+export PATH=/usr/local/bin:$PATH
+
+alias v=vim
+alias e=emacs
+alias t="bundle exec rspec --color --format=documentation"

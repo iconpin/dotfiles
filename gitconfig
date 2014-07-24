@@ -9,7 +9,7 @@
   rebase = true
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = emacs
 [alias]
   c = checkout
   s = status
