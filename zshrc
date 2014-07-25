@@ -1,11 +1,7 @@
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}$(custom_pwd) %{$reset_color%}$(git_prompt)%{$fg[red]%}[$(rvm-prompt)]%{$reset_color%}
-%{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%}[$(rvm-prompt)]%{$reset_color%}
+%{$fg[yellow]%}%(!.#.€)%{$reset_color%} '
 
 RPROMPT=''
-
-function custom_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~," | sed -e "s,~/Development/,~/D/,")
-}
 
 export DIRSTACKFILE=~/.zdirs
 export DIRSTACKSIZE=8
@@ -145,8 +141,8 @@ function mandelbrot {
     done
 }
 
-# Vim!
-export EDITOR=vim
+# Evil!
+export EDITOR=emacs
 
 # May need this for colors over ssh!
 # export TERM=xterm-color
@@ -156,7 +152,7 @@ export LANG=en_US.UTF-8
 
 alias v=vim
 alias e=emacs
-alias t="bundle exec rspec --color --format=documentation"
+alias t="bundle exec rspec --color"
 
 # bin folder
 export PATH=$HOME/bin:$PATH
@@ -165,4 +161,4 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # Add RVM to PATH for scripting
-export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
