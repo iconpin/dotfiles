@@ -148,20 +148,21 @@ function mandelbrot {
 # Vim!
 export EDITOR=vim
 
-# bin folder
-export PATH=$HOME/bin:$PATH
-
-# Add RVM to PATH for scripting
-export PATH="$HOME/.rvm/bin:$PATH"
-
 # May need this for colors over ssh!
 # export TERM=xterm-color
 
 # Better have something setted -- ssh
 export LANG=en_US.UTF-8
 
-export PATH=/usr/local/bin:$PATH
-
 alias v=vim
 alias e=emacs
 alias t="bundle exec rspec --color --format=documentation"
+
+# bin folder
+export PATH=$HOME/bin:$PATH
+
+# brew
+export PATH=/usr/local/bin:$PATH
+
+# Add RVM to PATH for scripting
+export PATH="$HOME/.rvm/bin:$PATH"
