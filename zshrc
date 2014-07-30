@@ -1,5 +1,5 @@
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%}[$(rvm-prompt)]%{$reset_color%}
-%{$fg[yellow]%}%(!.#.€)%{$reset_color%} '
+PROMPT='%{$fg[yellow]%}∃ %n%{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%} ♦$(rvm-prompt)%{$reset_color%}
+%{$fg[yellow]%}%(!.#.⍁)%{$reset_color%} '
 
 RPROMPT=''
 
@@ -121,7 +121,7 @@ git_prompt() {
         if git diff --quiet --ignore-submodules HEAD >/dev/null 2>&1; then
             extra=""
         fi
-        echo "%{$fg[yellow]%}($ref$extra)%{$reset_color%} "
+        echo "%{$fg[yellow]%}±$ref$extra%{$reset_color%}"
     fi
 }
 
