@@ -153,6 +153,7 @@ export LANG=en_US.UTF-8
 alias v=vim
 alias e=emacs
 alias t="bundle exec rspec --color"
+alias g="git"
 
 # bin folder
 export PATH=$HOME/bin:$PATH
