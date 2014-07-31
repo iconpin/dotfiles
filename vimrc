@@ -16,7 +16,7 @@ set tabstop=2
 set softtabstop=2
 
 colorscheme solarized
-set background=dark
+set background=light
 
 let g:lightline = {
       \ 'colorscheme': 'solarized'
