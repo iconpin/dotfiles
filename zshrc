@@ -118,10 +118,14 @@ git_prompt() {
         ref=$(git symbolic-ref HEAD 2>/dev/null || git name-rev --name-only --no-undefined --always HEAD)
         ref=${ref#refs/heads/}
         extra="*"
+        stash=""
         if git diff --quiet --ignore-submodules HEAD >/dev/null 2>&1; then
             extra=""
         fi
-        echo "%{$fg[yellow]%}±$ref$extra%{$reset_color%}"
+        if [ "$(git stash list 2>/dev/null)" != "" ]; then
+            stash=" ±stash"
+        fi
+        echo "%{$fg[yellow]%}±$ref$extra%{$fg[red]%}$stash%{$reset_color%}"
     fi
 }
 
