@@ -1,5 +1,5 @@
-PROMPT='%{$fg[yellow]%}∃ %n%{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%} ♦$(rvm-prompt)%{$reset_color%}
-%{$fg[yellow]%}%(!.#.⍁)%{$reset_color%} '
+PROMPT='%{$fg[blue]%}∃ %{$fg[yellow]%}%n %{$fg[blue]%}⊂ %{$fg[yellow]%}%m %{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%} ♦$(rvm-prompt)%{$reset_color%}
+%{$fg[blue]%}%(!.#.⍁)%{$reset_color%} '
 
 RPROMPT=''
 
@@ -177,5 +177,31 @@ hitch() {
 }
 alias unhitch='hitch -u'
 
-# Uncomment to persist pair info between terminal instances
-# hitch
+# Persist pair info between terminal instances
+# hitch()
+
+if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
+  update_terminal_cwd() {
+    local URL_PATH=''
+    {
+      local i ch hexch LANG=C
+      for ((i = 1; i <= ${#PWD}; ++i)); do
+        ch="$PWD[i]"
+        if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+          URL_PATH+="$ch"
+        else
+          hexch=$(printf "%02X" "'$ch")
+          URL_PATH+="%$hexch"
+        fi
+      done
+    }
+
+    local PWD_URL="file://$HOST$URL_PATH"
+    printf '\e]7;%s\a' "$PWD_URL"
+  }
+
+  autoload add-zsh-hook
+  add-zsh-hook precmd update_terminal_cwd
+
+  update_terminal_cwd
+fi
