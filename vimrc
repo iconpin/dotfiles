@@ -42,3 +42,5 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 set tags+=./tags
+
+let g:neocomplcache_enable_at_startup = 1

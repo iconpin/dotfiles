@@ -61,3 +61,9 @@
 [submodule "vim/bundle/vim-over"]
 	path = vim/bundle/vim-over
 	url = https://github.com/osyo-manga/vim-over
+[submodule "vim/bundle/neocomplcache.vim"]
+	path = vim/bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "k"]
+	path = k
+	url = https://github.com/supercrabtree/k
