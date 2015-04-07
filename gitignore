@@ -4,4 +4,6 @@
 *~
 .dired
 tags
-local_files
+local_files/
+coverage/
+.reviewboardrc

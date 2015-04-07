@@ -15,8 +15,9 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme molokai
+let g:molokai_original = 1
 
 let g:lightline = {
       \ 'colorscheme': 'solarized'
@@ -43,4 +44,4 @@ nmap sk :SplitjoinJoin<cr>
 
 set tags+=./tags
 
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1

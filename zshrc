@@ -1,5 +1,5 @@
-PROMPT='%{$fg[blue]%}∃ %{$fg[yellow]%}%n %{$fg[blue]%}⊂ %{$fg[yellow]%}%m %{$reset_color%} %{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%} ♦$(rvm-prompt)%{$reset_color%}
-%{$fg[blue]%}%(!.#.⍁)%{$reset_color%} '
+PROMPT='%{$fg[blue]%}%{$fg[yellow]%}%n %{$fg[blue]%}at %{$fg[yellow]%}%m %{$reset_color%}%{$fg[blue]%}%~ %{$reset_color%}$(git_prompt)%{$fg[red]%}♦$(rvm-prompt)%{$reset_color%}
+%{$fg[blue]%}%(!.#.$)%{$reset_color%} '
 
 RPROMPT=''
 
@@ -59,9 +59,12 @@ bindkey -v '^m' check-line
 bindkey -v '^n' down-line-or-search
 bindkey -v '^p' up-line-or-search
 bindkey -v '^s' insert-sudo
+bindkey -e
 
 ## ALIASES ##
+alias vim=nvim
 alias ack="ack --color"
+alias ackbar="ack --ignore-dir=log --ignore-dir=local_files --context"
 alias cal="cal -3"
 alias cd=" cd"
 alias diff="diff -yEbwB --suppress-common-lines"
@@ -70,6 +73,26 @@ alias sl="ls"
 alias l="ls -h"
 alias ll="ls -lh"
 alias la="ls -lah"
+
+## YEAH
+alias v=vim
+alias e=emacs
+alias f=foreman
+
+## Rails-y aliases
+alias t="bundle exec rspec --color"
+alias p="bundle exec rake parallel:spec"
+alias raket="bundle exec rake db:migrate db:test:prepare"
+alias rakep="bundle exec rake db:migrate 'parallel:rake[db:test:prepare]'"
+
+## GIT ALIASES ##
+alias g="git"
+alias gc="g c"
+alias gd="g d"
+alias gs="g s"
+alias gb="g b"
+alias gf="g f"
+alias gx="gitx"
 
 ## SNIPPETS ##
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -125,7 +148,7 @@ git_prompt() {
         if [ "$(git stash list 2>/dev/null)" != "" ]; then
             stash=" ±stash"
         fi
-        echo "%{$fg[yellow]%}±$ref$extra%{$fg[red]%}$stash%{$reset_color%}"
+        echo "%{$fg[yellow]%}±$ref$extra%{$fg[red]%}$stash%{$reset_color%} "
     fi
 }
 
@@ -153,11 +176,6 @@ export EDITOR=emacs
 
 # Better have something setted -- ssh
 export LANG=en_US.UTF-8
-
-alias v=vim
-alias e=emacs
-alias t="bundle exec rspec --color"
-alias g="git"
 
 # bin folder
 export PATH=$HOME/bin:$PATH
@@ -205,3 +223,17 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
 
   update_terminal_cwd
 fi
+
+# Tarsnap
+alias tarsnap="tarsnap --configfile $HOME/.tarsnap/tarsnap.conf"
+
+# Go
+export GOPATH=$HOME/go
+
+# Activator
+export PATH=$PATH:$HOME/activator-1.3.2
+
+# boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/iconpin/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
